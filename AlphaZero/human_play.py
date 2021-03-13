@@ -5,6 +5,7 @@ from game import Board, Game #定义了棋盘Board
 from mcts_pure import MCTSPlayer as MCTS_Pure
 from mcts_alphaZero import MCTSPlayer
 from policy_value_net_pytorch import PolicyValueNet  # Pytorch
+import argparse
 
 
 # 由人来输入下棋的位置
@@ -35,12 +36,13 @@ class Human(object):
 
 
 # GoBang主程序
-def run():
+def run(model_file):
     n = 5
     # 这里可以修改棋盘的大小，需要和AI Model的棋盘大小相等
-    width, height = 6, 6
+    width, height = 10, 10
     # 调用AI模型
-    model_file = 'best_policy.model'
+    # model_file = 'current_policy.model' # 恰好最后一次模型跟best模型的胜率一样，但是loss更低
+    # model_file = 'best_policy.model'
     try:
         # 初始化棋盘
         board = Board(width=width, height=height, n_in_row=n)
@@ -65,4 +67,10 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    # 运行附加一个参数，选择用哪个模型
+    parser = argparse.ArgumentParser()
+    parser.add_argument("cand_model") 
+    args = parser.parse_args()
+    parser.parse_args()
+    
+    run(model_file=args.cand_model)
