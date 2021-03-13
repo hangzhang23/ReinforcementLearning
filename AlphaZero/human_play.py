@@ -38,10 +38,9 @@ class Human(object):
 def run():
     n = 5
     # 这里可以修改棋盘的大小，需要和AI Model的棋盘大小相等
-    width, height = 10, 10
+    width, height = 6, 6
     # 调用AI模型
-    model_file = 'current_policy.model' # 恰好最后一次模型跟best模型的胜率一样，但是loss更低
-    # model_file = 'best_policy.model'
+    model_file = 'best_policy.model'
     try:
         # 初始化棋盘
         board = Board(width=width, height=height, n_in_row=n)
