@@ -15,7 +15,7 @@ class TrainPipeline():
         # 设置棋盘和游戏的参数
         self.board_width = 10
         self.board_height = 10
-        self.n_in_row = 4
+        self.n_in_row = 5
         self.board = Board(width=self.board_width,
                            height=self.board_height,
                            n_in_row=self.n_in_row)
