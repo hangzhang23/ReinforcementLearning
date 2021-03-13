@@ -10,4 +10,4 @@
 ```
 python human_play.py <modelname>
 ```
-会读取保存好的current_policy或者best_policy模型，后面参数<modelname>选择输入best_policy.model或者current_policy.model
+会读取保存好的current_policy或者best_policy模型，后面参数<modelname>选择输入best_policy.model或者current_policy.model，然后就可以人机对弈，直到得出胜负。
